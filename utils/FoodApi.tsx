@@ -12,7 +12,7 @@ export default class FoodApi {
         this.pageSize = 10;
     }
 
-    async process(params: FoodApiParams, callback: (data: JSON) => void) {
+    async process(params: FoodApiParams, callback: (data: any[]) => void) {
         let pageCount = this.pageSize;
         let base = this._currentPageNum * pageCount;
 

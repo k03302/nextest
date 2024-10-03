@@ -1,6 +1,6 @@
 "use client"
 
-import { Food, FoodCardParams } from "@/types/types"
+import { FoodCardParams } from "@/types/types"
 
 export default function FoodCard({ params }: { params: FoodCardParams }) {
     return (<div key={params.id}>

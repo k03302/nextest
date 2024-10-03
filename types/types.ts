@@ -14,3 +14,9 @@ export interface Recipe {
     name: string;
     food: Food
 }
+
+export interface FoodApiParams {
+    name?: string;
+    ingredients?: string;
+    category?: string;
+}

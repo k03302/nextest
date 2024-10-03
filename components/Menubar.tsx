@@ -1,36 +1,26 @@
 "use client"
+import axios from "axios"
+import { useState, useEffect, useCallback, Dispatch, SetStateAction } from "react";
 
-import { useRouter } from "next/navigation"
-import { useState, useEffect, useCallback } from "react";
-import { Category } from "@/type/types"
+//import "@/styles/globals.css"
 
-export default function Menubar() {
-    let [categories, setCategories] = useState<Category[] | null>(null);
-    let [selected, setSelected] = useState<Category | null>(null);
-
-    useEffect(() => {
-
-    }, [selected]);
-
-    const handleClick = useCallback((category: Category) => {
-        setSelected(category);
-
-    }, []);
+export default function Menubar({ setFoodCategory }: { setFoodCategory: Dispatch<SetStateAction<string | null>> }) {
+    const categories = ["밥", "국", "반찬", "후식", "찌개"];
+    let [selected, setSelected] = useState<number | null>(null);
 
     return (
         <div className="menubar">
             {
-                categories && (categories.length > 0) ? (
-                    categories.map((category) => (
-                        <div key={category.id}
-                            className={selected && category.id == selected.id ? "selected" : ""}
-                            onClick={() => { setSelected(category); }}>
-                            <p>{category.name}</p>
-                        </div>
-                    ))
-                ) : (
-                    <p>wait for a sec...</p>
-                )
+                categories.map((categoryName, i) => (
+                    <div key={i}
+                        className={i === selected ? "selected" : ""}
+                        onClick={() => {
+                            setSelected(i);
+                            setFoodCategory(categoryName);
+                        }}>
+                        <p>{categoryName}</p>
+                    </div>
+                ))
             }
         </div>
     );

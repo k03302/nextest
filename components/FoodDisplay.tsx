@@ -2,7 +2,7 @@
 
 import axios from "axios"
 import { useState, useEffect } from "react"
-import FoodApi from "@/utils/foodapi"
+import FoodApi from "@/utils/FoodApi"
 import FoodCard from "./FoodCard"
 
 const foodApi = new FoodApi();

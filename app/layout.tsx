@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar"
+import { useFavState } from "@/stores/useFavStore"
+import { usersTable } from '@/src/db/schema'
+import { db } from '@/src/db'
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -13,6 +16,8 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    //const setFavList = useFavState((state) => { state.setFavList });
+    //setFavList([""]);
     return (
         <html lang="en">
             <body>

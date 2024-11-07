@@ -32,7 +32,7 @@
         "**/*.ts",
         "**/*.tsx",
         ".next/types/**/*.ts"
-    ],
+, "app/api/secured.js", "app/api/login.js"    ],
     "exclude": [
         "node_modules"
     ],
